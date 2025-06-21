@@ -8,12 +8,12 @@ source "https://rubygems.org"
 gem "chef", path: "."
 
 gem "chef-config", path: File.expand_path("../chef-config", __FILE__) if File.exist?(File.expand_path("../chef-config", __FILE__))
-gem "cheffish", "~> 14"
+gem "cheffish", "~> 15", ">= 15.0.0"
 
 group(:omnibus_package) do
   gem "appbundler"
   gem "rb-readline"
-  gem "inspec-core", "~> 2"
+  gem "inspec-core", "~> 2", ">= 2.2.112"
   gem "chef-vault"
 end
 
@@ -32,7 +32,7 @@ group(:maintenance) do
   gem "tomlrb"
 
   # To sync maintainers with github
-  gem "octokit"
+  gem "octokit", ">= 4.13.0"
   gem "netrc"
 end
 
@@ -57,7 +57,7 @@ group(:development, :test) do
 end
 
 group(:travis) do
-  gem "travis"
+  gem "travis", ">= 1.8.10"
 end
 
 instance_eval(ENV["GEMFILE_MOD"]) if ENV["GEMFILE_MOD"]
