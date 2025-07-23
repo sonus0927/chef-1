@@ -13,7 +13,7 @@ gem "cheffish", "~> 14"
 group(:omnibus_package) do
   gem "appbundler"
   gem "rb-readline"
-  gem "inspec-core", "~> 2"
+  gem "inspec-core", "~> 4", ">= 4.18.85"
   gem "chef-vault"
 end
 
