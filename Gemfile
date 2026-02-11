@@ -13,7 +13,7 @@ gem "cheffish", "~> 14"
 group(:omnibus_package) do
   gem "appbundler"
   gem "rb-readline"
-  gem "inspec-core", "~> 2"
+  gem "inspec-core", "~> 2", ">= 2.2.112"
   gem "chef-vault"
 end
 
@@ -32,7 +32,7 @@ group(:maintenance) do
   gem "tomlrb"
 
   # To sync maintainers with github
-  gem "octokit"
+  gem "octokit", ">= 4.23.0"
   gem "netrc"
 end
 
@@ -57,7 +57,7 @@ group(:development, :test) do
 end
 
 group(:travis) do
-  gem "travis"
+  gem "travis", ">= 1.12.0"
 end
 
 instance_eval(ENV["GEMFILE_MOD"]) if ENV["GEMFILE_MOD"]
